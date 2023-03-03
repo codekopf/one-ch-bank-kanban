@@ -1,17 +1,26 @@
-<div class='kanban_view'>
-  <div class='kanban_controls'>
-    <div>
-      <input type="text" [(ngModel)]='taskNew' placeholder="New task name">
-      <button (click)="onAddCard()">Add</button>
-    </div>
-    <div>
-      <input type='text' [(ngModel)]='taskSelected'>
-      <button (click)='onMoveBackCard()'>Move Back</button>
-      <button (click)='onMoveForwardCard()'>Move Forward</button>
-      <button (click)='onDeleteCard()'>Delete</button>
+<main class="container p-3 py-md-5">
+
+  <div class="bg-light p-3 py-md-5 rounded kanban_view">
+    <div class='kanban_controls'>
+      <div>
+        <input type="text" [(ngModel)]='taskNew' placeholder="New task name">
+        <button (click)="onAddCard()">Add</button>
+      </div>
+      <div>
+        <input type='text' [(ngModel)]='taskSelected'>
+        <button (click)='onMoveBackCard()'>Move Back</button>
+        <button (click)='onMoveForwardCard()'>Move Forward</button>
+        <button (click)='onDeleteCard()'>Delete</button>
+      </div>
     </div>
   </div>
-  <div class='kanban_stage_container'>
-    <app-kanban-stage *ngFor='let stage of stages' [stage]='stage' (onCardSelect)='onCardSelect($event)'></app-kanban-stage>
+
+  <div class="kanban_stage_container p-3 py-md-5 text-center">
+    <div class="row">
+      <div class='col' *ngFor='let stage of this.stages'>
+        <app-kanban-stage [stage]='stage' (onCardSelection)='onCardSelect($event)'></app-kanban-stage>
+      </div>
+    </div>
   </div>
-</div>
+
+</main>

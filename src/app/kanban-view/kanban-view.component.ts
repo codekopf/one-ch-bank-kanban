@@ -11,7 +11,7 @@ export class KanbanViewComponent implements OnInit {
 
   taskCounter = 0;
 
-  stages = [
+  stages: Stage[] = [
     new Stage(1, 'Backlog', []),
     new Stage(2, 'To Do', []),
     new Stage(3, 'Ongoing', []),
@@ -35,16 +35,16 @@ export class KanbanViewComponent implements OnInit {
     }
   }
 
-  onCardSelect(card: Card) {
-    this.taskSelected = card.getName();
+  onCardSelect(data: any) { // TODO cast to Card
+    this.taskSelected = data.getName();
   }
 
   onMoveBackCard() {
-    this.moveTask(1);
+    this.moveTask(-1);
   }
 
   onMoveForwardCard() {
-    this.moveTask(-1);
+    this.moveTask(1);
   }
 
   moveTask(direction: number) {

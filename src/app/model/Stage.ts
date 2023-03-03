@@ -12,6 +12,14 @@ export class Stage {
     this.cards = cards;
   }
 
+  public getId(): number {
+    return this.id;
+  }
+
+  public getName(): string {
+    return this.name;
+  }
+
   public addCard(card: Card) {
     this.cards.push(card);
   }
