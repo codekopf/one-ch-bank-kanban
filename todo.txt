@@ -1,0 +1,4 @@
++ Add readme.md to root
++ Add logging service
++ + Logging service only available in dev mode
++ Add tests

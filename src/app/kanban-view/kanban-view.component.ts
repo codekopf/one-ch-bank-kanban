@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Card} from '../model/Card';
+import {Stage} from '../model/Stage';
 
 @Component({
   selector: 'app-kanban-view',
@@ -7,42 +9,80 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KanbanViewComponent implements OnInit {
 
-  stages = [{
-    id: 1,
-    name: 'Backlog',
-    cards: [],
-  }, {
-    id: 2,
-    name: 'To Do',
-    cards: [],
-  }, {
-    id: 3,
-    name: 'Ongoing',
-    cards: [],
-  }, {
-    id: 4,
-    name: 'Done',
-    cards: [],
-  }];
- 
+  taskCounter = 0;
+
+  stages = [
+    new Stage(1, 'Backlog', []),
+    new Stage(2, 'To Do', []),
+    new Stage(3, 'Ongoing', []),
+    new Stage(4, 'Done', [])
+  ];
+
+  taskNew: string = '';
+  taskSelected: string = ''; // TODO rework to CardSelected
+
   constructor() { }
 
   ngOnInit() {
   }
 
   onAddCard() {
+    if (this.taskNew.trim()) {
+      this.stages[0].addCard(
+        new Card(this.taskCounter++, this.taskNew)
+      );
+      this.taskNew = '';
+    }
   }
 
-  onCardselect(data) {
+  onCardSelect(card: Card) {
+    this.taskSelected = card.getName();
   }
 
   onMoveBackCard() {
+    this.moveTask(1);
   }
 
   onMoveForwardCard() {
+    this.moveTask(-1);
+  }
+
+  moveTask(direction: number) {
+    let currentStageIndex = this.getCurrentStageIndex();
+    let currentStageCards = this.stages[currentStageIndex].getCards();
+    let index = currentStageCards.findIndex(card => card.getName() === this.taskSelected);
+    let card = currentStageCards[index];
+    if (index !== -1) {
+      currentStageCards.splice(index, 1);
+      let newStageIndex = currentStageIndex + direction;
+      if (newStageIndex >= 0 && newStageIndex < this.stages.length) {
+        this.stages[newStageIndex].getCards().push(card);
+      } else {
+        this.taskSelected = '';
+      }
+    }
+  }
+
+  getCurrentStageIndex() {
+    for (let i = 0; i < this.stages.length; i++) {
+      let index = this.stages[i].getCards().findIndex(card => card.getName() === this.taskSelected);
+      if (index !== -1) {
+        return i;
+      }
+    }
+    return -1;
   }
 
   onDeleteCard() {
+    for (let i = 0; i < this.stages.length; i++) {
+      let cards = this.stages[i].getCards();
+      let index = cards.findIndex(card => card.getName() === this.taskSelected);
+      if (index !== -1) {
+        cards.splice(index, 1);
+        break;
+      }
+    }
+    this.taskSelected = '';
   }
 
 }

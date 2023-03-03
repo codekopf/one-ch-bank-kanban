@@ -6,7 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./kanban-card.component.css']
 })
 export class KanbanCardComponent implements OnInit {
-  @Input() card: object;
+  // @Input() card: object;
   @Output() onCardSelected: EventEmitter<Object> = new EventEmitter<Object>();
 
   constructor() { }
@@ -14,6 +14,6 @@ export class KanbanCardComponent implements OnInit {
   ngOnInit() {
   }
 
-  onCardSelect(id) {
-  }
+  // onCardSelect(id) {
+  // }
 }
