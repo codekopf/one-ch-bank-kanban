@@ -14,8 +14,8 @@
           <h4>Edit task</h4>
           <div class="input-group">
             <input type='text' [(ngModel)]='taskSelected' class="form-control">
-            <button class="btn btn-outline-secondary" (click)='onMoveBackCard()'>Move Back</button>
-            <button class="btn btn-outline-secondary" (click)='onMoveForwardCard()'>Move Forward</button>
+            <button class="btn btn-outline-secondary" [disabled]="getCurrentStageIndex() === 0" (click)='onMoveBackCard()'>Move Back</button>
+            <button class="btn btn-outline-secondary" [disabled]="getCurrentStageIndex() === stages.length - 1" (click)='onMoveForwardCard()'>Move Forward</button>
             <button class="btn btn-danger" (click)='onDeleteCard()'>Delete</button>
           </div>
         </div>
