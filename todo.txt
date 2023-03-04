@@ -2,3 +2,5 @@
 + Add logging service
 + + Logging service only available in dev mode
 + Add tests
++ Maybe rework solution to originally intended design (kanban-card component)
++ Copilot suggestion > use Angular 15.2.1, Spring Boot 2.5.4., Docker to run the application, use GitHub Actions to build and deploy the application to Heroku.
