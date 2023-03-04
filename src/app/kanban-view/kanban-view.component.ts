@@ -66,7 +66,7 @@ export class KanbanViewComponent implements OnInit {
     }
   }
 
-  getCurrentStageIndex(): void {
+  getCurrentStageIndex(): number {
     for (let i = 0; i < this.stages.length; i++) {
       let index = this.stages[i].getCards().findIndex(card => card.getName() === this.taskSelected);
       if (index !== -1) {
