@@ -18,11 +18,11 @@ export class KanbanStageComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     console.log(this.stage);
   }
 
-  onCardSelected(card: Card) {
+  onCardSelected(card: Card): void {
     this.onCardSelection.emit(card);
   }
 

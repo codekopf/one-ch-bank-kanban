@@ -23,10 +23,10 @@ export class KanbanViewComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
-  onAddCard() {
+  onAddCard(): void {
     if (this.taskNew.trim()) {
       this.stages[0].addCard(
         new Card(this.taskCounter++, this.taskNew)
@@ -35,19 +35,19 @@ export class KanbanViewComponent implements OnInit {
     }
   }
 
-  onCardSelect(card: Card) {
+  onCardSelect(card: Card): void {
     this.taskSelected = card.getName();
   }
 
-  onMoveBackCard() {
+  onMoveBackCard(): void {
     this.moveTask(-1);
   }
 
-  onMoveForwardCard() {
+  onMoveForwardCard(): void {
     this.moveTask(1);
   }
 
-  moveTask(direction: number) {
+  moveTask(direction: number): void {
     let currentStageIndex = this.getCurrentStageIndex();
     if ((direction === -1 && currentStageIndex === 0) || (direction === 1 && currentStageIndex === this.stages.length - 1)) {
       return;
@@ -66,7 +66,7 @@ export class KanbanViewComponent implements OnInit {
     }
   }
 
-  getCurrentStageIndex() {
+  getCurrentStageIndex(): void {
     for (let i = 0; i < this.stages.length; i++) {
       let index = this.stages[i].getCards().findIndex(card => card.getName() === this.taskSelected);
       if (index !== -1) {
@@ -76,7 +76,7 @@ export class KanbanViewComponent implements OnInit {
     return -1;
   }
 
-  onDeleteCard() {
+  onDeleteCard(): void {
     for (let i = 0; i < this.stages.length; i++) {
       let cards = this.stages[i].getCards();
       let index = cards.findIndex(card => card.getName() === this.taskSelected);

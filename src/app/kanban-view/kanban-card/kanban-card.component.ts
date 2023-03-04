@@ -11,9 +11,9 @@ export class KanbanCardComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
-  // onCardSelect(id) {
+  // onCardSelect(id): void {
   // }
 }
