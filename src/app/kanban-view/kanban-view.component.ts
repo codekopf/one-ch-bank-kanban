@@ -49,6 +49,9 @@ export class KanbanViewComponent implements OnInit {
 
   moveTask(direction: number) {
     let currentStageIndex = this.getCurrentStageIndex();
+    if ((direction === -1 && currentStageIndex === 0) || (direction === 1 && currentStageIndex === this.stages.length - 1)) {
+      return;
+    }
     let currentStageCards = this.stages[currentStageIndex].getCards();
     let index = currentStageCards.findIndex(card => card.getName() === this.taskSelected);
     let card = currentStageCards[index];

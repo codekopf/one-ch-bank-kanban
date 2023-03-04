@@ -1,3 +1,6 @@
+// Add tests for card moving back from stage 0 and forward from the last stage.
+// In corrupted logic, they were lost due they moved to stages out of stages range.
+
 // import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
 //
 // import { KanbanViewComponent } from './kanban-view.component';
