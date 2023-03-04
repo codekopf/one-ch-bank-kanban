@@ -35,8 +35,8 @@ export class KanbanViewComponent implements OnInit {
     }
   }
 
-  onCardSelect(data: any) { // TODO cast to Card
-    this.taskSelected = data.getName();
+  onCardSelect(card: Card) {
+    this.taskSelected = card.getName();
   }
 
   onMoveBackCard() {

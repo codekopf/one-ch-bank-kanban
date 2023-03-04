@@ -14,7 +14,7 @@ export class KanbanStageComponent implements OnInit {
 
   // Or we can just do it old-fashioned way and initialize it with a default/fake values
   @Input() stage: Stage = new Stage(0, '', []);
-  @Output() onCardSelection: EventEmitter<Object> = new EventEmitter<Object>();
+  @Output() onCardSelection: EventEmitter<Card> = new EventEmitter<Card>();
 
   constructor() {}
 
