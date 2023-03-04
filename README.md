@@ -1,8 +1,10 @@
-# One CH bank Kanban
+# One CH bank Kanban Board
 
-This project was created as side-project based on one task in multi-question entry test for one Swiss bank. As I had no time to fully understand shenanigans of whole project in browser IDE, I decided to download it and develop it locally. However, after recent clean installation of Windows I did not have even node.js installed, nor NPM.
+This project was created as side-project based on one task in multi-question entry test for one Swiss bank. As I had no time to fully understand shenanigans of whole project in browser IDE I do not use, I have decided to download it and develop it locally. However, I forgot that after recent clean installation of Windows I did not have installed even node.js, nor NPM.
 
-So after the test was submitted I decided to develop it further and complete it to working MVP.
+I did not and still do not consider this task to be appropriate for multi-question test where other task and questions are also involved. So I skipped the question totally. 
+
+After the test was submitted I decided to develop it further and complete it to working MVP. It took me roughly 2 hours to complete it using the classes and structure I considered to be the most appropriate.
 
 Desired functionality:
 
