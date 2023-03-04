@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "solution-ans-ng2": {
+    "one-ch-bank-kanban": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/solution-ans-ng2",
+            "outputPath": "dist/one-ch-bank-kanban",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -63,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "solution-ans-ng2:build:production"
+              "browserTarget": "one-ch-bank-kanban:build:production"
             },
             "development": {
-              "browserTarget": "solution-ans-ng2:build:development"
+              "browserTarget": "one-ch-bank-kanban:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -74,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "solution-ans-ng2:build"
+            "browserTarget": "one-ch-bank-kanban:build"
           }
         },
         "test": {

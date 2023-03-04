@@ -16,6 +16,10 @@ My implementation:
 
 I auto generated the new Angular project with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.1 from scratch as the original project has problem with dependancies. After that I replaced necessary files with original ones. 
 
+## Docker
+
+Build docker image with `docker build -t one-ch-bank-kanban:latest .` and then to run application in Docker container use `docker run -p 8080:80 one-ch-bank-kanban:latest`.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
